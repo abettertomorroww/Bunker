@@ -134,6 +134,44 @@ namespace Bunker.Models.Init_Models
             specifications.Hobby.Add("Фотография и фотокниги");
             specifications.Hobby.Add("Футбол");
             specifications.Hobby.Add("Шитье и вышивание");
+            specifications.Hobby.Add("Чтение");
+            specifications.Hobby.Add("Выступления в театре");
+            specifications.Hobby.Add("Гребля на каноэ");
+            specifications.Hobby.Add("Теннис");
+            specifications.Hobby.Add("Паркур и различные трюки");
+            specifications.Hobby.Add("Зубрёжка стихов");
+            specifications.Hobby.Add("Охота в лесу");
+            specifications.Hobby.Add("Дзюдо");
+            specifications.Hobby.Add("Виноделие");
+            specifications.Hobby.Add("Вскрытие замков");
+            specifications.Hobby.Add("Рукоделие");
+            specifications.Hobby.Add("Ролевые игры");
+            specifications.Hobby.Add("Иностранные языки");
+            specifications.Hobby.Add("Писание картин");
+            specifications.Hobby.Add("Плавание");
+            specifications.Hobby.Add("Вышивание");
+            specifications.Hobby.Add("Конный спорт");
+            specifications.Hobby.Add("Рыбаловство");
+            specifications.Hobby.Add("Собирание пазлов");
+            specifications.Hobby.Add("Садоводство");
+            specifications.Hobby.Add("Командные стратегии");
+            specifications.Hobby.Add("Коллекционирование марок");
+            specifications.Hobby.Add("Стихоплётство");
+            specifications.Hobby.Add("Путешествия");
+            specifications.Hobby.Add("Астрономия");
+            specifications.Hobby.Add("Выживания в экстремальных местностях");
+            specifications.Hobby.Add("Чтение");
+            specifications.Hobby.Add("Чечетка");
+            specifications.Hobby.Add("Интеллектуальные игры");
+            specifications.Hobby.Add("Разгадывание головоломок");
+            specifications.Hobby.Add("Игра на гитаре");
+            specifications.Hobby.Add("Любит кулинарию и необычайно вкусно готовит");
+            specifications.Hobby.Add("Разгадывание кроссвордов");
+            specifications.Hobby.Add("Компьютерные игры");
+            specifications.Hobby.Add("Гидропоника — выращивание растений без почвы");
+            specifications.Hobby.Add("Наблюдение за птицами");
+            specifications.Hobby.Add("Кулинария");
+            specifications.Hobby.Add("Футбол");
         }
     }
 }
