@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bunker.Data
 {
-    class SavingToFile
+    public class SavingToFile
     {
         public SavingToFile(string[][] allPlayers, string pathToFile)
         {

@@ -7,28 +7,46 @@ using Bunker.Models;
 
 namespace Bunker.Data
 {
-    class CreateDataForSaveFile
+    public class CreateDataForSaveFile
     {
         Specifications specifications;
         SavingToFile saveToFile;
+        public string[][] allPlayers;
         public CreateDataForSaveFile(int playersCount, Specifications _specifications, string pathToFile)
         {
             specifications = _specifications;
             Random rnd = new Random();
             string disaster = FormingDisaster(rnd);
-            string[][] allPlayers = new string[playersCount][];
-            allPlayers = FormingRandomProperties(playersCount, disaster, rnd);
+            string animals = FormingAnimal(rnd);
+            allPlayers = new string[playersCount][];
+            allPlayers = FormingRandomProperties(playersCount, disaster, rnd, animals);
             saveToFile = new SavingToFile(allPlayers, pathToFile);
         }
 
         private string FormingDisaster(Random rnd)
         {
             string disaster = specifications.Disaster[rnd.Next(0, specifications.Disaster.Count)] + 
-                $"\r\nОтсавшееся население: {rnd.Next(1,56)}%. Разрушенность мира: {rnd.Next(25,100)}%. Нахождение в бункере: {rnd.Next(1, 15)} лет, {rnd.Next(1,13)} месяцев \r\n \r\n";
+                $"\r\nОтсавшееся население: {rnd.Next(1,56)}%. Разрушенность мира: {rnd.Next(25,100)}%." +  
+                "Нахождение в бункере: {rnd.Next(1, 15)} лет, {rnd.Next(1,13)} месяцев \r\n";
             return disaster;
         }
 
-        private string[][] FormingRandomProperties(int playersCount, string disaster, Random rnd)
+        private string FormingAnimal(Random rnd)
+        {
+            string animals;
+            switch (rnd.Next(1, 6))
+            {
+                case 1: animals = "В бункере живут: Змеи\r\n"; break;
+                case 2: animals = "В бункере живут: Крысы\r\n"; break;
+                case 3: animals = "В бункере живут: Летучии мыши\r\n"; break;
+                case 4: animals = "В бункере живут: Насекомые\r\n"; break;
+                case 5: animals = "В бункере живут: Птицы\r\n"; break;
+                default: animals = "В бункере живут: Никто\r\n"; break;
+            }
+            return animals;
+        }
+
+        private string[][] FormingRandomProperties(int playersCount, string disaster, Random rnd, string animals)
         {
             string[] propertyPlayer = new string[9];
             string[][] allPlayers = new string[playersCount][];
@@ -55,32 +73,44 @@ namespace Bunker.Data
                 }
                 else propertyPlayer[8] = specifications.Card[newNumber];
 
-                allPlayers[i] = FormingFinalProperties(propertyPlayer, disaster, rnd);
+                allPlayers[i] = FormingFinalProperties(propertyPlayer, disaster, rnd, animals);
             }
             return allPlayers;
         }
 
-        private string[] FormingFinalProperties(string[] playerProp, string disaster, Random rnd)
+        private string[] FormingFinalProperties(string[] playerProp, string disaster, Random rnd, string animals)
         {
             int age = rnd.Next(0, 2);
             int child = rnd.Next(0, 2);
-            string[] propertyPlayer = new string[14];
+            int height = rnd.Next(120, 200);
+            int weight = rnd.Next(38, 140);
+            double IIB = weight / Math.Pow(height*0.01, 2);
+            
+            string[] propertyPlayer = new string[15];
             propertyPlayer[0] = "Катастрофа: " + disaster;
-            propertyPlayer[1] = "Профессия: " + playerProp[0];
-            propertyPlayer[2] = "Возраст: " + rnd.Next(16, 96);
-            if (child == 1) propertyPlayer[3] = "Деторождение: Childfree";
-            else propertyPlayer[3] = "Деторождение: не Childfree";
-            if (age == 1) propertyPlayer[4] = "Пол: Мужчина";
-            else propertyPlayer[4] = "Пол: Женщина";
-            propertyPlayer[5] = "Рост: " + rnd.Next(120, 200) + " см. Вес: " + rnd.Next(38, 140) + " кг";
-            propertyPlayer[6] = "Здоровье: " + playerProp[1];
-            propertyPlayer[7] = "Черта характера: " + playerProp[2];
-            propertyPlayer[8] = "Фоббия: " + playerProp[4];
-            propertyPlayer[9] = "Хобби: " + playerProp[3];
-            propertyPlayer[10] = "Доп. информация: " + playerProp[5];
-            propertyPlayer[11] = "Багаж: " + playerProp[6];
-            propertyPlayer[12] = "Карта 1: " + playerProp[7];
-            propertyPlayer[13] = "Карта 2: " + playerProp[8];
+            propertyPlayer[1] = animals;
+            propertyPlayer[2] = "Профессия: " + playerProp[0];
+            propertyPlayer[3] = "Возраст: " + rnd.Next(16, 96);
+            if (child == 1) propertyPlayer[4] = "Деторождение: Childfree";
+            else propertyPlayer[4] = "Деторождение: не Childfree";
+            if (age == 1) propertyPlayer[5] = "Пол: Мужчина";
+            else propertyPlayer[5] = "Пол: Женщина";
+
+            if (IIB < 18.5) propertyPlayer[6] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Вес ниже нормы";
+            else if (IIB >= 18.5 && IIB < 25) propertyPlayer[6] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Норма";
+            else if (IIB >= 25 && IIB < 30) propertyPlayer[6] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Избыточный вес";
+            else if (IIB >= 30 && IIB < 35) propertyPlayer[6] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение I степени";
+            else if (IIB >= 35 && IIB < 40) propertyPlayer[6] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение II степени";
+            else if (IIB >= 40) propertyPlayer[6] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение III степени";
+
+            propertyPlayer[7] = "Здоровье: " + playerProp[1];
+            propertyPlayer[8] = "Черта характера: " + playerProp[2];
+            propertyPlayer[9] = "Фоббия: " + playerProp[4];
+            propertyPlayer[10] = "Хобби: " + playerProp[3];
+            propertyPlayer[11] = "Доп. информация: " + playerProp[5];
+            propertyPlayer[12] = "Багаж: " + playerProp[6];
+            propertyPlayer[13] = "Карта 1: " + playerProp[7];
+            propertyPlayer[14] = "Карта 2: " + playerProp[8];
             return propertyPlayer;
         }
     }

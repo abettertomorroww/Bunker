@@ -29,6 +29,7 @@ namespace Bunker
         private CreateDataForSaveFile createData;
         private string pathToFile;
         private SettingsForm settingsForm;
+        private bool settingsReady = false;
 
         public Form1()
         {
@@ -46,7 +47,6 @@ namespace Bunker
             info = new Init_Info(specifications);
             luggage = new Init_Luggage(specifications);
             card = new Init_Card(specifications);
-            settingsForm = new SettingsForm();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -61,6 +61,7 @@ namespace Bunker
             {
                 createData = new CreateDataForSaveFile(playersCount, specifications, pathToFile);
                 MessageBox.Show("Файлы сохранены");
+                settingsReady = true;
             }
         }
 
@@ -75,7 +76,13 @@ namespace Bunker
 
         private void button4_Click(object sender, EventArgs e)
         {
-            settingsForm.Show();
+            if (settingsReady == true) 
+            {
+                int playersCount = Convert.ToInt32(comboBox1.Text);
+                settingsForm = new SettingsForm(playersCount, specifications, createData, pathToFile);
+                settingsForm.Show();
+            }
+            else MessageBox.Show("Сначала сгенерируйте роли");
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bunker.Models
 {
-    class Specifications
+    public class Specifications
     {
         public List<string> Disaster = new List<string>();
         public List<string> Profession = new List<string>();
