@@ -14,22 +14,22 @@ namespace Bunker.Data
         public CreateDataForSaveFile(int playersCount, Specifications _specifications, string pathToFile)
         {
             specifications = _specifications;
-            string disaster = FormingDisaster();
+            Random rnd = new Random();
+            string disaster = FormingDisaster(rnd);
             string[][] allPlayers = new string[playersCount][];
-            allPlayers = FormingRandomProperties(playersCount, disaster);
+            allPlayers = FormingRandomProperties(playersCount, disaster, rnd);
             saveToFile = new SavingToFile(allPlayers, pathToFile);
         }
 
-        private string FormingDisaster()
+        private string FormingDisaster(Random rnd)
         {
-            Random rnd = new Random();
-            string disaster = specifications.Disaster[rnd.Next(0, specifications.Disaster.Count)];
+            string disaster = specifications.Disaster[rnd.Next(0, specifications.Disaster.Count)] + 
+                $"\r\nОтсавшееся население: {rnd.Next(1,56)}%. Разрушенность мира: {rnd.Next(25,100)}%. Нахождение в бункере: {rnd.Next(1, 15)} лет, {rnd.Next(1,13)} месяцев \r\n \r\n";
             return disaster;
         }
 
-        private string[][] FormingRandomProperties(int playersCount, string disaster)
+        private string[][] FormingRandomProperties(int playersCount, string disaster, Random rnd)
         {
-            Random rnd = new Random();
             string[] propertyPlayer = new string[9];
             string[][] allPlayers = new string[playersCount][];
             int oldNumber = 0;

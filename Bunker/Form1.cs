@@ -28,7 +28,8 @@ namespace Bunker
         private Init_Card card;
         private CreateDataForSaveFile createData;
         private string pathToFile;
-        
+        private SettingsForm settingsForm;
+
         public Form1()
         {
             InitializeComponent();
@@ -45,6 +46,7 @@ namespace Bunker
             info = new Init_Info(specifications);
             luggage = new Init_Luggage(specifications);
             card = new Init_Card(specifications);
+            settingsForm = new SettingsForm();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,7 +57,11 @@ namespace Bunker
             {
                 MessageBox.Show("Не указан путь сохранения файлов");
             }
-            else createData = new CreateDataForSaveFile(playersCount, specifications, pathToFile);
+            else
+            {
+                createData = new CreateDataForSaveFile(playersCount, specifications, pathToFile);
+                MessageBox.Show("Файлы сохранены");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -65,6 +71,11 @@ namespace Bunker
                 {
                     pathToFile = path_dialog.SelectedPath;
                 }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            settingsForm.Show();
         }
     }
 }
