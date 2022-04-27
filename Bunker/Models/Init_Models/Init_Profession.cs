@@ -286,6 +286,7 @@ namespace Bunker.Models.Init_Models
             specifications.Profession.Add("Судья");
             specifications.Profession.Add("Тюремный надзиратель");
             specifications.Profession.Add("Юрист");
+            specifications.Profession.Add("Вебкам модель");
         }
     }
 }
