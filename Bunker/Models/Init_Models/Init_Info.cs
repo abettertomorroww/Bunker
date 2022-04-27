@@ -142,7 +142,43 @@ namespace Bunker.Models.Init_Models
             specifications.Add_Info.Add("У меня затяжная боль из-за старых травм");
             specifications.Add_Info.Add("Кое-кто спас мне жизнь на улицах. С тех пор я никогда не оставляю друзей, оставшихся в беде");
             specifications.Add_Info.Add("Я не буду продавать предмет искусства или другое сокровище, если оно имеет культурную ценность");
-
+            specifications.Add_Info.Add("Все детство провел на улице");
+            specifications.Add_Info.Add("Имеет медицинское образование");
+            specifications.Add_Info.Add("Изучил сложные химические процессы и технологию производства алкоголя");
+            specifications.Add_Info.Add("Мастер спорта по борьбе");
+            specifications.Add_Info.Add("Имеет образование химика");
+            specifications.Add_Info.Add("Обманывал в детстве других детей");
+            specifications.Add_Info.Add("Ориентируется по звездам");
+            specifications.Add_Info.Add("Любит кулинарию и необычайно вкусно готовит");
+            specifications.Add_Info.Add("Пару раз читал 'Метро' Глуховского");
+            specifications.Add_Info.Add("Помешанный на зомби");
+            specifications.Add_Info.Add("В детстве была мечта стать космонавтом");
+            specifications.Add_Info.Add("Изучал составы различных жидкостей");
+            specifications.Add_Info.Add("Знает структуру компьютеров");
+            specifications.Add_Info.Add("Родители занимались скотоводством");
+            specifications.Add_Info.Add("Обьездил всю планету");
+            specifications.Add_Info.Add("Лишил жизни человека");
+            specifications.Add_Info.Add("Умеет манипулировать людьми");
+            specifications.Add_Info.Add("Воспитывался в строгой военной дисциплине");
+            specifications.Add_Info.Add("Владеет языком жестов");
+            specifications.Add_Info.Add("Верит в заговоры");
+            specifications.Add_Info.Add("Умеет вскрывать замки");
+            specifications.Add_Info.Add("Разбирается в людях");
+            specifications.Add_Info.Add("Знает множество стихотворений");
+            specifications.Add_Info.Add("Выиграл в лотерею");
+            specifications.Add_Info.Add("Знает несколько языков");
+            specifications.Add_Info.Add("Родители занимались фермерством");
+            specifications.Add_Info.Add("Приходилось принимать роды");
+            specifications.Add_Info.Add("Преуспевал в учебе и был умнее сверстников");
+            specifications.Add_Info.Add("Обманывал в детстве других детей");
+            specifications.Add_Info.Add("Знает азбуку морзе");
+            specifications.Add_Info.Add("В душе архитектор");
+            specifications.Add_Info.Add("Проходил курсы психолога");
+            specifications.Add_Info.Add("Верит в духов");
+            specifications.Add_Info.Add("Хорошая физическая подготовка");
+            specifications.Add_Info.Add("Имеет образование биолога");
+            specifications.Add_Info.Add("Любит горячую выпечку");
+            specifications.Add_Info.Add("Воровал деньги у собственных родителей на развлечения");
         }
     }
 }

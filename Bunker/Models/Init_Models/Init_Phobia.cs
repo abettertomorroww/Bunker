@@ -17,6 +17,7 @@ namespace Bunker.Models.Init_Models
 
         private void Fill_Phobia()
         {
+            specifications.Phobia.Add("нет фобии");
             specifications.Phobia.Add("аблютофобия(аблутофобия) — боязнь умывания, купания, стирки или чистки");
             specifications.Phobia.Add("авиафобия, авиофобия — боязнь полётов в воздушных транспортных средствах");
             specifications.Phobia.Add("агирофобия(дромофобия) — боязнь улиц, пересекать улицу");

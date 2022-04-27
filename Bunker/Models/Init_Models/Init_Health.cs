@@ -17,7 +17,7 @@ namespace Bunker.Models.Init_Models
 
         private void Fill_Health()
         {
-            specifications.Health.Add("Полностью здоров(а)");
+            specifications.Health.Add("Полностью здоров");
             specifications.Health.Add("Абфракция");
             specifications.Health.Add("Аденоиды");
             specifications.Health.Add("Аллергический ринит(Хронический)");
