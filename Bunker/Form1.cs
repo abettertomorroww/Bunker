@@ -26,6 +26,9 @@ namespace Bunker
         private Init_Info info;
         private Init_Luggage luggage;
         private Init_Card card;
+        private Init_Equipment equipment;
+        private Init_Devices devices;
+        private Init_Place place;
         private CreateDataForSaveFile createData;
         private string pathToFile;
         private SettingsForm settingsForm;
@@ -47,6 +50,9 @@ namespace Bunker
             info = new Init_Info(specifications);
             luggage = new Init_Luggage(specifications);
             card = new Init_Card(specifications);
+            equipment = new Init_Equipment(specifications);
+            devices = new Init_Devices(specifications);
+            place = new Init_Place(specifications);
         }
 
         private void button1_Click(object sender, EventArgs e)

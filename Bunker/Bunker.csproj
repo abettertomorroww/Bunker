@@ -55,13 +55,16 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Init_Models\Init_Card.cs" />
+    <Compile Include="Models\Init_Models\Init_Devices.cs" />
     <Compile Include="Models\Init_Models\Init_Disaster.cs" />
+    <Compile Include="Models\Init_Models\Init_Equipment.cs" />
     <Compile Include="Models\Init_Models\Init_Health.cs" />
     <Compile Include="Models\Init_Models\Init_Hobby.cs" />
     <Compile Include="Models\Init_Models\Init_Info.cs" />
     <Compile Include="Models\Init_Models\Init_Luggage.cs" />
     <Compile Include="Models\Init_Models\Init_Personality.cs" />
     <Compile Include="Models\Init_Models\Init_Phobia.cs" />
+    <Compile Include="Models\Init_Models\Init_Place.cs" />
     <Compile Include="Models\Init_Models\Init_Profession.cs" />
     <Compile Include="Models\Specifications.cs" />
     <Compile Include="Program.cs" />

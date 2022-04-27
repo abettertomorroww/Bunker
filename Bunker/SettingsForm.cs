@@ -171,7 +171,7 @@ namespace Bunker
         private void button8_Click(object sender, EventArgs e)
         {
             int height = rnd.Next(120, 200);
-            int weight = rnd.Next(38, 140);
+            int weight = rnd.Next(38, 120);
             double IIB = weight / Math.Pow(height * 0.01, 2);
             if (comboBox3.SelectedItem.ToString() != "Все игроки")
             {
