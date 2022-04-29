@@ -53,13 +53,13 @@ namespace Bunker
         {
             if (comboBox1.SelectedItem.ToString() != "Все игроки")
             {
-                createData.allPlayers[comboBox1.SelectedIndex][6] = "Здоровье: " + specifications.Health[rnd.Next(0, specifications.Health.Count)];
+                createData.allPlayers[comboBox1.SelectedIndex][8] = "Здоровье: " + specifications.Health[rnd.Next(0, specifications.Health.Count)];
             }
             else
             {
                 for (int i = 0; i < playersCount; i++)
                 {
-                    createData.allPlayers[i][6] = "Здоровье: " + specifications.Health[rnd.Next(0, specifications.Health.Count)];
+                    createData.allPlayers[i][8] = "Здоровье: " + specifications.Health[rnd.Next(0, specifications.Health.Count)];
                 }
             }
             savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
@@ -70,13 +70,13 @@ namespace Bunker
         {
             if (comboBox2.SelectedItem.ToString() != "Все игроки")
             {
-                createData.allPlayers[comboBox2.SelectedIndex][8] = "Фобия: " + specifications.Phobia[rnd.Next(0, specifications.Phobia.Count)];
+                createData.allPlayers[comboBox2.SelectedIndex][10] = "Фобия: " + specifications.Phobia[rnd.Next(0, specifications.Phobia.Count)];
             }
             else
             {
                 for (int i = 0; i < playersCount; i++)
                 {
-                    createData.allPlayers[i][8] = "Фобия: " + specifications.Phobia[rnd.Next(0, specifications.Phobia.Count)];
+                    createData.allPlayers[i][10] = "Фобия: " + specifications.Phobia[rnd.Next(0, specifications.Phobia.Count)];
                 }
             }
             savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
@@ -85,15 +85,15 @@ namespace Bunker
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(comboBox3.SelectedItem.ToString() != "Все игроки")
+            if (comboBox3.SelectedItem.ToString() != "Все игроки")
             {
-                createData.allPlayers[comboBox3.SelectedIndex][9] = "Хобби: " + specifications.Hobby[rnd.Next(0, specifications.Hobby.Count)];
+                createData.allPlayers[comboBox3.SelectedIndex][11] = "Хобби: " + specifications.Hobby[rnd.Next(0, specifications.Hobby.Count)];
             }
             else
             {
                 for (int i = 0; i < playersCount; i++)
                 {
-                    createData.allPlayers[i][9] = "Хобби: " + specifications.Hobby[rnd.Next(0, specifications.Hobby.Count)];
+                    createData.allPlayers[i][11] = "Хобби: " + specifications.Hobby[rnd.Next(0, specifications.Hobby.Count)];
                 }
             }
             savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
@@ -102,15 +102,17 @@ namespace Bunker
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (comboBox3.SelectedItem.ToString() != "Все игроки")
+            if (comboBox4.SelectedItem.ToString() != "Все игроки")
             {
-                createData.allPlayers[comboBox3.SelectedIndex][1] = "Профессия: " + specifications.Profession[rnd.Next(0, specifications.Profession.Count)];
+                createData.allPlayers[comboBox4.SelectedIndex][3] = $"Профессия: {specifications.Profession[rnd.Next(0, specifications.Profession.Count)]}." +
+                    $" Стаж работы: {rnd.Next(0, 40)} лет, {rnd.Next(1, 13)} месяцев";
             }
             else
             {
                 for (int i = 0; i < playersCount; i++)
                 {
-                    createData.allPlayers[i][1] = "Профессия: " + specifications.Profession[rnd.Next(0, specifications.Profession.Count)];
+                    createData.allPlayers[comboBox4.SelectedIndex][3] = $"Профессия: {specifications.Profession[rnd.Next(0, specifications.Profession.Count)]}." +
+                    $" Стаж работы: {rnd.Next(0, 40)} лет, {rnd.Next(1, 13)} месяцев";
                 }
             }
             savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
@@ -121,13 +123,13 @@ namespace Bunker
         {
             if (comboBox3.SelectedItem.ToString() != "Все игроки")
             {
-                createData.allPlayers[comboBox3.SelectedIndex][11] = "Багаж: " + specifications.Luggage[rnd.Next(0, specifications.Luggage.Count)];
+                createData.allPlayers[comboBox3.SelectedIndex][13] = "Багаж: " + specifications.Luggage[rnd.Next(0, specifications.Luggage.Count)];
             }
             else
             {
                 for (int i = 0; i < playersCount; i++)
                 {
-                    createData.allPlayers[i][11] = "Багаж: " + specifications.Luggage[rnd.Next(0, specifications.Luggage.Count)];
+                    createData.allPlayers[i][13] = "Багаж: " + specifications.Luggage[rnd.Next(0, specifications.Luggage.Count)];
                 }
             }
             savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
@@ -136,15 +138,15 @@ namespace Bunker
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (comboBox3.SelectedItem.ToString() != "Все игроки")
+            if (comboBox6.SelectedItem.ToString() != "Все игроки")
             {
-                createData.allPlayers[comboBox3.SelectedIndex][10] = "Доп. информация: " + specifications.Add_Info[rnd.Next(0, specifications.Add_Info.Count)];
+                createData.allPlayers[comboBox6.SelectedIndex][12] = "Доп. информация: " + specifications.Add_Info[rnd.Next(0, specifications.Add_Info.Count)];
             }
             else
             {
                 for (int i = 0; i < playersCount; i++)
                 {
-                    createData.allPlayers[i][10] = "Доп. информация: " + specifications.Add_Info[rnd.Next(0, specifications.Add_Info.Count)];
+                    createData.allPlayers[i][12] = "Доп. информация: " + specifications.Add_Info[rnd.Next(0, specifications.Add_Info.Count)];
                 }
             }
             savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
@@ -153,15 +155,15 @@ namespace Bunker
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (comboBox3.SelectedItem.ToString() != "Все игроки")
+            if (comboBox7.SelectedItem.ToString() != "Все игроки")
             {
-                createData.allPlayers[comboBox3.SelectedIndex][7] = "Черта характера: " + specifications.Personality[rnd.Next(0, specifications.Personality.Count)];
+                createData.allPlayers[comboBox7.SelectedIndex][9] = "Черта характера: " + specifications.Personality[rnd.Next(0, specifications.Personality.Count)];
             }
             else
             {
                 for (int i = 0; i < playersCount; i++)
                 {
-                    createData.allPlayers[i][7] = "Черта характера: " + specifications.Personality[rnd.Next(0, specifications.Personality.Count)];
+                    createData.allPlayers[i][9] = "Черта характера: " + specifications.Personality[rnd.Next(0, specifications.Personality.Count)];
                 }
             }
             savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
@@ -175,23 +177,23 @@ namespace Bunker
             double IIB = weight / Math.Pow(height * 0.01, 2);
             if (comboBox3.SelectedItem.ToString() != "Все игроки")
             {
-                if (IIB < 18.5) createData.allPlayers[comboBox3.SelectedIndex][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Вес ниже нормы";
-                else if (IIB >= 18.5 && IIB < 25) createData.allPlayers[comboBox3.SelectedIndex][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Норма";
-                else if (IIB >= 25 && IIB < 30) createData.allPlayers[comboBox3.SelectedIndex][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Избыточный вес";
-                else if (IIB >= 30 && IIB < 35) createData.allPlayers[comboBox3.SelectedIndex][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение I степени";
-                else if (IIB >= 35 && IIB < 40) createData.allPlayers[comboBox3.SelectedIndex][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение II степени";
-                else if (IIB >= 40) createData.allPlayers[comboBox3.SelectedIndex][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение III степени";
+                if (IIB < 18.5) createData.allPlayers[comboBox3.SelectedIndex][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Вес ниже нормы";
+                else if (IIB >= 18.5 && IIB < 25) createData.allPlayers[comboBox3.SelectedIndex][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Норма";
+                else if (IIB >= 25 && IIB < 30) createData.allPlayers[comboBox3.SelectedIndex][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Избыточный вес";
+                else if (IIB >= 30 && IIB < 35) createData.allPlayers[comboBox3.SelectedIndex][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение I степени";
+                else if (IIB >= 35 && IIB < 40) createData.allPlayers[comboBox3.SelectedIndex][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение II степени";
+                else if (IIB >= 40) createData.allPlayers[comboBox3.SelectedIndex][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение III степени";
             }
             else
             {
                 for (int i = 0; i < playersCount; i++)
                 {
-                    if (IIB < 18.5) createData.allPlayers[i][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Вес ниже нормы";
-                    else if (IIB >= 18.5 && IIB < 25) createData.allPlayers[i][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Норма";
-                    else if (IIB >= 25 && IIB < 30) createData.allPlayers[i][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Избыточный вес";
-                    else if (IIB >= 30 && IIB < 35) createData.allPlayers[i][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение I степени";
-                    else if (IIB >= 35 && IIB < 40) createData.allPlayers[i][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение II степени";
-                    else if (IIB >= 40) createData.allPlayers[i][5] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение III степени";
+                    if (IIB < 18.5) createData.allPlayers[i][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Вес ниже нормы";
+                    else if (IIB >= 18.5 && IIB < 25) createData.allPlayers[i][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Норма";
+                    else if (IIB >= 25 && IIB < 30) createData.allPlayers[i][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Избыточный вес";
+                    else if (IIB >= 30 && IIB < 35) createData.allPlayers[i][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение I степени";
+                    else if (IIB >= 35 && IIB < 40) createData.allPlayers[i][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение II степени";
+                    else if (IIB >= 40) createData.allPlayers[i][7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Ожирение III степени";
                 }
             }
             savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
