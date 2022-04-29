@@ -53,6 +53,8 @@ namespace Bunker
             this.button8 = new System.Windows.Forms.Button();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -319,13 +321,41 @@ namespace Bunker
             this.label8.TabIndex = 28;
             this.label8.Text = "Рост вес";
             // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.Control;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.Location = new System.Drawing.Point(12, 471);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(167, 54);
+            this.button9.TabIndex = 31;
+            this.button9.Text = "Сформировать катастрофу";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.Control;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button10.Location = new System.Drawing.Point(185, 471);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(139, 54);
+            this.button10.TabIndex = 32;
+            this.button10.Text = "Сформировать бункер";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(337, 471);
+            this.ClientSize = new System.Drawing.Size(339, 532);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.comboBox8);
             this.Controls.Add(this.label8);
@@ -386,5 +416,7 @@ namespace Bunker
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
