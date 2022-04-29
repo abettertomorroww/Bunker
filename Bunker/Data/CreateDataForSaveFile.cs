@@ -115,21 +115,28 @@ namespace Bunker.Data
 
         private string[] FormingFinalProperties(string[] playerProp, string disaster, Random rnd, string animals, string formingBunker)
         {
-            int age = rnd.Next(0, 2);
-            int child = rnd.Next(0, 2);
+            int sex = rnd.Next(0, 2);
+            int age = rnd.Next(16, 90);
+            int child = rnd.Next(0, 3);
             int height = rnd.Next(120, 200);
             int weight = rnd.Next(38, 120);
             double IIB = weight / Math.Pow(height * 0.01, 2);
+            int experience = rnd.Next(0, 50);
+            int experienceHobby = rnd.Next(0,20);
+
+            if (age - experience < 18 && age > 18) experience = rnd.Next(0, age - 18);
+            if (age - experienceHobby < 17 && age > 17) experienceHobby = rnd.Next(0, age - 17);
 
             string[] propertyPlayer = new string[16];
             propertyPlayer[0] = "Катастрофа: " + disaster;
             propertyPlayer[1] = formingBunker;
             propertyPlayer[2] = animals;
-            propertyPlayer[3] = "Профессия: " + playerProp[0];
-            propertyPlayer[4] = "Возраст: " + rnd.Next(16, 96);
+            if (age > 18) propertyPlayer[3] = $"Профессия: {playerProp[0]}. Стаж работы: {experience} лет, {rnd.Next(1, 13)} месяцев";
+            else propertyPlayer[3] = $"Профессия: учится на {playerProp[0]}";
+            propertyPlayer[4] = "Возраст: " + age; 
             if (child == 1) propertyPlayer[5] = "Деторождение: Childfree";
             else propertyPlayer[5] = "Деторождение: не Childfree";
-            if (age == 1) propertyPlayer[6] = "Пол: Мужчина";
+            if (sex == 1) propertyPlayer[6] = "Пол: Мужчина";
             else propertyPlayer[6] = "Пол: Женщина";
 
             if (IIB < 18.5) propertyPlayer[7] = $"Рост: {height} см. Вес: {weight}кг. ИМТ: Вес ниже нормы";
@@ -142,7 +149,8 @@ namespace Bunker.Data
             propertyPlayer[8] = "Здоровье: " + playerProp[1];
             propertyPlayer[9] = "Черта характера: " + playerProp[2];
             propertyPlayer[10] = "Фоббия: " + playerProp[4];
-            propertyPlayer[11] = "Хобби: " + playerProp[3];
+            if(age > 17) propertyPlayer[11] = $"Хобби: {playerProp[3]}. Стаж хобби: {experienceHobby} лет, {rnd.Next(1,13)} месяцев";
+            else propertyPlayer[11] =  $"Хобби: {playerProp[3]}. Стаж хобби: {0} лет, {rnd.Next(1, 13)} месяцев";
             propertyPlayer[12] = "Доп. информация: " + playerProp[5];
             propertyPlayer[13] = "Багаж: " + playerProp[6];
             propertyPlayer[14] = "Карта 1: " + playerProp[7];
