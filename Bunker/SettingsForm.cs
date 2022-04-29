@@ -199,5 +199,69 @@ namespace Bunker
             savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
             MessageBox.Show("Файл(ы) перезаписан(ы)");
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string formingBunker;
+            string eq1;
+            string eq2;
+            string dev1;
+            string dev2;
+            string state;
+            string animals;
+
+            eq1 = specifications.Equipment[rnd.Next(0, specifications.Equipment.Count)];
+            eq2 = specifications.Equipment[rnd.Next(0, specifications.Equipment.Count)];
+            if (eq1 == eq2) eq2 = specifications.Equipment[rnd.Next(0, specifications.Equipment.Count)];
+            dev1 = specifications.Devices[rnd.Next(0, specifications.Devices.Count)];
+            dev2 = specifications.Devices[rnd.Next(0, specifications.Devices.Count)];
+            if (dev1 == dev2) dev2 = specifications.Devices[rnd.Next(0, specifications.Devices.Count)];
+
+            switch (rnd.Next(0, 4))
+            {
+                case 0: state = "Убежище находится в прекрасном состоянии, надежно\r\nспрятано и хорошо защищено внутри от недоброжелателей защитно-герметическими дверями.\r\nВсе системы жизнеобеспечения в норме и работают в автономном режиме.\r\nВ таком убежище можно жить и не бояться за себя."; break;
+                case 1: state = "Убежище в хорошем состоянии.\r\nСуществам и другим выжившим, которые настроены враждебно, попасть вряд ли получится, потому что убежище достаточно спрятано и защищено.\r\nВсе системы жизнеобеспечения в норме, работают в автономном режиме и вряд ли могут дать сбой"; break;
+                case 2: state = "Убежище в плохом состоянии, недостаточно защищен и при огромном желании враждебные существа и другие выжившие могут попасть внутрь.\r\nСистемы жизнеобеспечения в исправности и работают в автономном режиме, но в любой момент могут отказать.\r\nВсе схемы и документация о починке механизмов присутствуют"; break;
+                case 3: state = "Убежище в ужасном состоянии, не защищен и при желании враждебные существа и другие выжившие могут попасть внутрь.\r\nСистемы жизнеобеспечения в сбоят и работают в автономном режиме, но в любой момент могут отказать.\r\nCхемы и документация о починке механизмов отсутствуют"; break;
+                default: state = "Состояние убежищя не известно"; break;
+            }
+
+            formingBunker = $"{state}\r\n"
+                + $"\r\nЖилых комнат: {rnd.Next(1, 10)}."
+                + $"\r\nВ убежище оборудовано: {eq1}.\r\nВ убежище оборудовано: {eq2}."
+                + $"\r\nВ убежище есть: {dev1}.\r\nВ убежище есть: {dev2}.";
+
+            switch (rnd.Next(1, 7))
+            {
+                case 1: animals = "\r\nВ бункере живут: Змеи\r\n"; break;
+                case 2: animals = "\r\nВ бункере живут: Крысы\r\n"; break;
+                case 3: animals = "\r\nВ бункере живут: Летучии мыши\r\n"; break;
+                case 4: animals = "\r\nВ бункере живут: Насекомые\r\n"; break;
+                case 5: animals = "\r\nВ бункере живут: Птицы\r\n"; break;
+                case 6: animals = "\r\nВ бункере живут: Никто\r\n"; break;
+                default: animals = "\r\nВ бункере живут: Никто\r\n"; break;
+            }
+
+            for (int i = 0; i < playersCount; i++)
+            {
+                createData.allPlayers[i][1] = formingBunker;
+                createData.allPlayers[i][2] = animals;
+            }
+            savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
+            MessageBox.Show("Файл(ы) перезаписан(ы)");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string disaster = specifications.Disaster[rnd.Next(0, specifications.Disaster.Count)] +
+                $"\r\nОставшееся население: {rnd.Next(1, 56)}%.\r\nРазрушенность мира: {rnd.Next(25, 100)}%." +
+                $"\r\nНахождение в бункере: {rnd.Next(1, 15)} лет, {rnd.Next(1, 13)} месяцев \r\n";
+            for (int i = 0; i < playersCount; i++)
+            {
+                createData.allPlayers[i][0] = "Катастрофа: " + disaster;
+            }
+            savingToFile = new SavingToFile(createData.allPlayers, pathToFile);
+            MessageBox.Show("Файл(ы) перезаписан(ы)");
+        }
     }
 }

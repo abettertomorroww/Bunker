@@ -27,7 +27,7 @@ namespace Bunker.Data
         private string FormingDisaster(Random rnd)
         {
             string disaster = specifications.Disaster[rnd.Next(0, specifications.Disaster.Count)] +
-                $"\r\nОтсавшееся население: {rnd.Next(1, 56)}%.\r\nРазрушенность мира: {rnd.Next(25, 100)}%." +
+                $"\r\nОставшееся население: {rnd.Next(1, 56)}%.\r\nРазрушенность мира: {rnd.Next(25, 100)}%." +
                 $"\r\nНахождение в бункере: {rnd.Next(1, 15)} лет, {rnd.Next(1, 13)} месяцев \r\n";
             return disaster;
         }
